@@ -34,13 +34,16 @@ linux from scratch 9.0 with uefi_hint.txt
 		
 		linux /boot/vmlinuz-5.2.8-lfs-9.0 root=PARTUUID=e078c244-02 rootwait ro
 
-4. change /etc/fstab
+4. change /etc/fstab ( your two partition's UUID
 
 		UUID=3795-6B13  /boot/efi   vfat        defaults                                0   1
 		UUID=d4f439ff-265f-4acf-b297-593efede7bcb  /       ext4        noauto,user,e    xec    1   1
 
-5. chroot and mount first partition to /boot/efi
+5. chroot and mount first partition to /boot/efi, grub-install, umount, and reboot
 
 		sudo -S ./login_lfs.sh
 		mkdir -pv /boot/efi
 		grub-install --bootloader-id=LFS --recheck --debug --efi-directory=/boot/efi --boot-directory=/boot --removable
+		umount /boot/efi
+		exit
+		sudo reboot
