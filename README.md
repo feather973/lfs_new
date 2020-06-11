@@ -13,7 +13,7 @@ linux from scratch 9.0 with uefi_hint.txt
 2. copy all contents from local git to loopback img
 
 		cd mountdir
-    		sudo rsync -avxHAX ~/lfs_new/* . --progress
+    	sudo rsync -avxHAX ~/lfs_new/* . --progress
 
 3. unshare, mount kernel virtual filesystem, chroot
     
