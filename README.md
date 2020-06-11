@@ -13,7 +13,7 @@ linux from scratch 9.0 with uefi_hint.txt
 2. copy all contents from local git to loopback img
 
 		cd mountdir
-    	sudo rsync -avxHAX ~/lfs_new/* . --progress
+    		sudo rsync -avxHAX ~/lfs_new/* . --progress
 
 3. unshare, mount kernel virtual filesystem, chroot
     
@@ -21,7 +21,7 @@ linux from scratch 9.0 with uefi_hint.txt
 
 [how to make booting usb]
 
-1. format usb with gparted ( first partiton : FAT32 with boot/esp flag,  second partition : ext4 )
+1. format usb with gparted ( partition table : MSDOS,  first partiton : FAT32 with boot/esp flag,  second partition : ext4 )
 
 		/dev/sdc1  *      2048   514047   512000  250M ef EFI (FAT-12/16/32)
     	/dev/sdc2       514048 30031871 29517824 14.1G 83 Linux
